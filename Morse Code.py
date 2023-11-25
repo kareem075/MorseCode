@@ -21,3 +21,19 @@ def decryption(morse_code):
             if code == value:
                 text += key
     return text
+    
+def main():
+    while True:
+        user_input = input("Enter a sentence or Morse code (type 'exit' to end): ")
+
+        if any(words.isalpha() for words in user_input):
+            result = encryption(user_input)
+            print("Morse code: ", result)
+        else:
+            result = decryption(user_input)
+            print("Decription: ", result)
+
+        if user_input.lower() == 'exit':
+            break
+if __name__ == "__main__":
+    main()
